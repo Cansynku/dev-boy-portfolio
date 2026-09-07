@@ -1,48 +1,79 @@
-# Javier Cano · Dev Boy
+# 🎮 DEV BOY
 
-Portfolio interactivo inspirado en una consola portátil clásica. Contenido basado en Javier_Cano_CV_Backend_Java_2026.pdf.
+### Javier Cano García · Portfolio interactivo
 
-## Uso
+Mi recorrido profesional dentro de una consola portátil.
 
-- Arriba / abajo: elegir sección; dentro de una sección, desplazar el contenido. Izquierda / derecha: cambiar directamente de sección.
-- A o Enter: abrir. B o Escape: volver al menú.
-- START: perfil. SELECT: CV completo en modo lectura.
-- También puedes pulsar directamente las opciones de la pantalla.
-- Sonido opcional, desactivado inicialmente.
-- CV original descargable y enlaces de contacto, LinkedIn y GitHub.
+[**Abrir el portfolio →**](https://javier-cano-dev-boy.jcanogarcia96.chatgpt.site/) · [LinkedIn](https://www.linkedin.com/in/javier-cano-garc%C3%ADa/) · [CV en PDF](public/Javier_Cano_CV_Backend_Java_2026.pdf)
 
-## Abrir la copia editable
+![CI](https://github.com/Cansynku/dev-boy-portfolio/actions/workflows/ci.yml/badge.svg?branch=main)
 
-Requiere Node.js 22.13 o posterior y npm. Desde esta carpeta:
+## El proyecto
 
-    npm ci
-    npm run dev -- --host 127.0.0.1
+Dev Boy presenta mi experiencia, tecnologías, formación y contacto en una interfaz inspirada en Game Boy, con teclado, controles táctiles, sonido opcional y modo lectura.
 
-Abre la dirección local indicada. El sitio funciona mientras el servidor permanece abierto. No está publicado en Internet.
+Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicación React y TypeScript**: presenta mi perfil; no contiene servicios Java ni demuestra una arquitectura backend bancaria.
 
-## Contenido y edición
+## Explorar
 
-- app/page.tsx: contenido, navegación y controles.
-- app/globals.css: diseño adaptable, consola y modo lectura.
-- app/layout.tsx: idioma y metadatos.
-- public/javier.jpg: foto extraída del CV.
-- public/Javier_Cano_CV_Backend_Java_2026.pdf: copia idéntica del original.
-- public/favicon.svg: identificación JC.
+- Seis pantallas: perfil, experiencia, stack, formación, idiomas y contacto.
+- Cruceta y botones A/B; sonido desactivado inicialmente.
+- Modo lectura con índice y descarga del CV.
+- Progreso de lectura y secciones visitadas durante la sesión.
+- Diseño adaptable y preferencia de movimiento reducido.
 
-No se han inventado proyectos, métricas ni logros. El entorno previsto del proyecto bancario mantiene esa calificación. Incluye los datos de contacto del CV; revísalos antes de una futura publicación.
+| Control        | Acción                               |
+| -------------- | ------------------------------------ |
+| ↑ / ↓          | Elegir sección o desplazar contenido |
+| ← / →          | Cambiar sección                      |
+| A / Enter      | Abrir                                |
+| B / Escape     | Menú                                 |
+| START / SELECT | Perfil / lectura                     |
 
-## Verificación realizada
+## Recorrido por el código
 
-- Compilación de producción: correcta.
-- TypeScript: correcto.
-- Análisis estático de app/: correcto.
-- Página, foto y PDF: respuesta HTTP 200.
-- PDF descargable: misma huella SHA-256 que el original.
-- Sin pruebas de interacción ni revisión visual en navegador en esta entrega.
+1. [Página principal](app/page.tsx): contenido, estado y controles.
+2. [Estilos](app/globals.css): consola y diseño adaptable.
+3. [Layout](app/layout.tsx): idioma y metadatos.
+4. [Arquitectura y calidad](docs/architecture.md).
+5. [GitFlow y contribución](CONTRIBUTING.md).
 
-El análisis global detecta incidencias preexistentes en componentes del starter que no se han modificado. La instalación informa de 11 avisos de seguridad en dependencias (1 bajo, 2 moderados y 8 altos); no se han aplicado actualizaciones forzadas. Revisar estas dependencias antes de publicar en producción.
+## Stack real
 
-## Segunda edición
+React 19 · TypeScript estricto · Vinext (APIs compatibles con Next.js sobre Vite) · Tailwind CSS 4 · Base UI / shadcn · Lucide · Cloudflare Workers / Sites.
 
-Encendido retro breve (repetible desde POWER), transiciones entre pantallas, marcas de secciones visitadas durante la sesión, indicador de lectura, accesos laterales y experiencia en formato de línea temporal en modo lectura. Respeta la preferencia de movimiento reducido. No añade dependencias ni altera los datos del CV.
+Se conserva el catálogo de la plantilla en `components/ui/`; la página usa el diálogo y sus dependencias. No todos sus componentes y paquetes están utilizados.
 
+## Desarrollo
+
+Node.js 22.13 o posterior y npm. CI utiliza Node 22.
+
+```sh
+git clone https://github.com/Cansynku/dev-boy-portfolio.git
+cd dev-boy-portfolio
+npm ci
+npm run dev
+```
+
+Abre la dirección indicada. No se necesita clave de API para consultar el portfolio.
+
+```sh
+npm run check        # tipos y lint de aplicación
+npm run build        # producción
+npm run lint:all     # catálogo completo heredado
+npm audit            # avisos actuales
+```
+
+CI ejecuta instalación reproducible, tipos, lint de aplicación y build. Solo tiene permisos de lectura. No se declara cobertura de navegador: los checks estáticos no sustituyen pruebas de interacción.
+
+## Publicación
+
+`feature/*` o `chore/*` → PR a `develop` → `release/*` → PR a `main` → etiqueta de versión. Hotfix desde `main`, integrado también en `develop`.
+
+**GitHub y la web pública son independientes.** Fusionar no cambia la web. Sites publica explícitamente una versión validada en la misma dirección.
+
+## Atribución
+
+El contenido procede de mi CV; los entornos previstos se identifican como tales. Foto y PDF son material personal: sustitúyelos si adaptas el proyecto. Game Boy es una marca de Nintendo; este proyecto no está afiliado a Nintendo.
+
+Parte de una plantilla de Sites y se ha desarrollado con asistencia de IA. No se añade una licencia global sobre contenido personal o materiales de terceros; se conservan los derechos y licencias aplicables.
