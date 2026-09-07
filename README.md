@@ -46,7 +46,7 @@ Se conserva el catálogo de la plantilla en `components/ui/`; la página usa el 
 
 ## Desarrollo
 
-Node.js 22.13 o posterior y npm. CI utiliza Node 22.
+Node.js 22.13 o posterior y npm 11.12.1. CI utiliza Node 22 y esa misma versión de npm para reproducir la resolución del lockfile.
 
 ```sh
 git clone https://github.com/Cansynku/dev-boy-portfolio.git
