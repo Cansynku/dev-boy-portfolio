@@ -59,6 +59,7 @@ Abre la dirección indicada. No se necesita clave de API para consultar el portf
 
 ```sh
 npm run check        # tipos y lint de aplicación
+npm test             # política de activación de estadísticas
 npm run build        # producción
 npm run lint:all     # catálogo completo heredado
 npm audit            # avisos actuales
@@ -67,6 +68,10 @@ npm audit            # avisos actuales
 CI ejecuta instalación reproducible, tipos, lint de aplicación y build. Solo tiene permisos de lectura. No se declara cobertura de navegador: los checks estáticos no sustituyen pruebas de interacción.
 
 ## Publicación
+
+### Estadísticas (preparación)
+
+La integración de Cloudflare Web Analytics se prepara en [docs/analytics.md](docs/analytics.md). Sigue desactivada hasta configurar el token público de medición y verificar la recepción de datos. Solo medirá visitas que lo permitan; no identifica recruiters ni cuenta descargas o clics internos.
 
 `feature/*` o `chore/*` → PR a `develop` → `release/*` → PR a `main` → etiqueta de versión. Hotfix desde `main`, integrado también en `develop`.
 

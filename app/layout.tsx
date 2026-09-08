@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import VisitorAnalytics from './visitor-analytics';
 export const metadata: Metadata = {
   metadataBase: new URL(
     'https://javier-cano-dev-boy.jcanogarcia96.chatgpt.site',
@@ -28,7 +29,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        {children}
+        <VisitorAnalytics />
+      </body>
     </html>
   );
 }
