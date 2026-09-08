@@ -1549,3 +1549,46 @@ kbd {
     transform: none;
   }
 }
+.analytics-preferences {
+  margin: 0 5%;
+  padding: 16px 0 24px;
+  color: #aebba3;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.analytics-preferences details {
+  max-width: 720px;
+}
+.analytics-preferences summary {
+  cursor: pointer;
+  width: fit-content;
+}
+.analytics-preferences a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.analytics-preferences p {
+  margin: 12px 0;
+}
+.analytics-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.analytics-choices button {
+  border: 1px solid #647456;
+  border-radius: 5px;
+  background: transparent;
+  color: #deead1;
+  padding: 9px 12px;
+}
+.analytics-choices button:hover {
+  background: #293322;
+}
+.analytics-choices button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.analytics-note {
+  color: #93a184;
+}
