@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0 — 2026-09-08
+
+- Estadísticas voluntarias de visitas con Cloudflare Web Analytics y panel privado del titular.
+- Preferencias en el pie de página, retirada del permiso y respeto de DNT/GPC.
+- Exclusión de desarrollo y forks; sin eventos de descargas ni contactos.
+- Cuatro pruebas de política de activación incorporadas a CI.
+
 ## 1.0.1 — 2026-09-08
 
 - Aviso de titularidad y condiciones de consulta del portfolio.

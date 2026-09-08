@@ -69,9 +69,9 @@ CI ejecuta instalación reproducible, tipos, lint de aplicación y build. Solo t
 
 ## Publicación
 
-### Estadísticas (preparación)
+### Estadísticas de visitas
 
-La integración de Cloudflare Web Analytics se prepara en [docs/analytics.md](docs/analytics.md). Sigue desactivada hasta configurar el token público de medición y verificar la recepción de datos. Solo medirá visitas que lo permitan; no identifica recruiters ni cuenta descargas o clics internos.
+La integración de [Cloudflare Web Analytics](docs/analytics.md) mide solo visitas que lo permitan mediante «Privacidad y estadísticas», al pie de la web. El panel pertenece al titular y no es público. No identifica recruiters ni cuenta descargas o clics internos. Las pruebas locales y los forks están excluidos.
 
 `feature/*` o `chore/*` → PR a `develop` → `release/*` → PR a `main` → etiqueta de versión. Hotfix desde `main`, integrado también en `develop`.
 

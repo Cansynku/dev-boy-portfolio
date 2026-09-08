@@ -2,7 +2,7 @@
 
 ## Estado de la integración
 
-La integración permanece desactivada mientras `app/analytics-config.json` no contenga el token público de Web Analytics del sitio. No introducir una API key de Cloudflare: el token de medición es un identificador público del snippet, no una credencial del panel.
+El sitio está registrado en la cuenta del titular y `app/analytics-config.json` contiene su token público de medición. No es una API key ni una credencial del panel. El código solo carga el beacon en producción con consentimiento expreso. Vaciar el token desactiva la integración en una siguiente publicación.
 
 ## Activación
 
