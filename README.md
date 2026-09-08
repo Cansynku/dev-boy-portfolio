@@ -74,6 +74,8 @@ CI ejecuta instalación reproducible, tipos, lint de aplicación y build. Solo t
 
 ## Atribución
 
+**© 2026 Javier Cano García. Derechos reservados sobre sus aportaciones originales.** Repositorio público para consulta y evaluación profesional; no se concede una licencia open source sobre las aportaciones propias. Reutilizarlas en otro portfolio requiere permiso, salvo los usos legales o expresamente autorizados. Consulta [propiedad y condiciones de uso](COPYRIGHT.md) y [avisos de terceros](THIRD_PARTY_NOTICES.md).
+
 El contenido procede de mi CV; los entornos previstos se identifican como tales. Foto y PDF son material personal: sustitúyelos si adaptas el proyecto. Game Boy es una marca de Nintendo; este proyecto no está afiliado a Nintendo.
 
-Parte de una plantilla de Sites y se ha desarrollado con asistencia de IA. No se añade una licencia global sobre contenido personal o materiales de terceros; se conservan los derechos y licencias aplicables.
+Parte de una plantilla de Sites y se ha desarrollado con asistencia de IA. Los componentes de terceros conservan sus licencias; la reserva de derechos no los convierte en propiedad exclusiva de Javier.
