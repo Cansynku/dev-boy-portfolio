@@ -1,6 +1,6 @@
 {
   "name": "dev-boy-portfolio",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -14,7 +14,8 @@
     "lint:app": "oxlint app lib components/ui/dialog.tsx components/ui/button.tsx",
     "lint:all": "oxlint",
     "typecheck": "tsc --noEmit --incremental false",
-    "check": "npm run typecheck && npm run lint:app"
+    "check": "npm run typecheck && npm run lint:app",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
