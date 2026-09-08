@@ -1,5 +1,7 @@
 # GitFlow y contribución
 
+Consulta [COPYRIGHT.md](COPYRIGHT.md) antes de reutilizar material. Las contribuciones no transfieren automáticamente su titularidad: acordar por escrito los permisos aplicables antes de integrar aportaciones externas.
+
 - `main`: versión estable; entrada mediante PR.
 - `develop`: integración.
 - `feature/*`, `fix/*`, `chore/*`: parten de `develop` y regresan por PR.
