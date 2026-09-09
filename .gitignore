@@ -39,3 +39,6 @@ next-env.d.ts
 
 # TypeScript incremental cache
 *.tsbuildinfo
+
+# Optional recording supplied locally; not licensed for repository distribution
+/public/audio/*.mp3

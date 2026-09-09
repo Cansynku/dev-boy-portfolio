@@ -1,0 +1,226 @@
+/* Career edition: direct paths and a navigable reading view. */
+.career-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 23px;
+  font: 10px var(--font-mono);
+  letter-spacing: 1px;
+  color: #b6c7a8;
+}
+.career-context span {
+  border: 1px solid #45513d;
+  border-radius: 3px;
+  padding: 6px 8px;
+  background: #a1c17c08;
+}
+.intro-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d1eda6;
+  border-radius: 5px;
+  padding: 13px 15px;
+  background: #c6ed8b;
+  color: #202b16;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 3px 0 #678145;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+.primary-action:hover {
+  background: #dcffae;
+  transform: translateY(-1px);
+}
+.primary-action:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+.contact-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: #cad6bf;
+  padding: 10px 0;
+}
+.contact-action:hover {
+  color: #e0f8c5;
+}
+.intro .text-link {
+  font-size: 12px;
+  color: #aebba3;
+  margin-top: 16px;
+  border-bottom-color: #48513f;
+}
+.intro-bottom {
+  margin-top: 32px;
+}
+.reader {
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px !important;
+  width: min(860px, calc(100vw - 32px)) !important;
+  max-width: 860px !important;
+  max-height: 90dvh !important;
+  overflow: hidden !important;
+}
+.reader-nav {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  border-top: 1px solid #ccd4c4;
+  border-bottom: 1px solid #ccd4c4;
+  flex-shrink: 0;
+}
+.reader-nav a {
+  font-size: 12px;
+  padding: 7px 10px;
+  border: 1px solid #ccd4c4;
+  border-radius: 4px;
+  color: #415437;
+  background: #e8eddf;
+}
+.reader-nav a:hover {
+  background: #d5e3c5;
+  color: #25351c;
+}
+.reader-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px 0 2px;
+}
+.reader-content > section {
+  scroll-margin-top: 8px;
+  padding: 22px 0;
+  border-bottom: 1px solid #d3d9cc;
+}
+.reader-content > section:first-child {
+  padding-top: 5px;
+}
+.reader-content > section:focus {
+  outline: 2px solid #718d54;
+  outline-offset: -2px;
+}
+.reader-content > section > h2 {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+.reader-content p,
+.reader-content li {
+  line-height: 1.75;
+}
+.reader .profile-line img {
+  width: 85px;
+  height: 95px;
+  filter: none;
+  mix-blend-mode: normal;
+}
+.reader .job {
+  margin-top: 20px;
+  padding-bottom: 8px;
+}
+.reader .job h3 {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+.reader .client {
+  color: #536448;
+  font-size: 14px;
+}
+.reader .stack-note {
+  font-size: 13px;
+  background: #e8eddf;
+  padding: 10px 12px;
+  border-left: 3px solid #809c61;
+}
+.reader .eyebrow {
+  font-size: 11px;
+  color: #536448;
+}
+@media (max-width: 740px) {
+  .career-context {
+    margin: 14px 0 17px;
+  }
+  .intro-actions {
+    gap: 16px;
+  }
+  .intro .text-link {
+    margin-top: 12px;
+  }
+  .reader-nav {
+    gap: 5px;
+    padding: 9px 0;
+  }
+  .reader-nav a {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  .reader-content {
+    padding-right: 7px;
+  }
+  .reader-content > section > h2 {
+    font-size: 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary-action {
+    transition: none;
+  }
+  .primary-action:hover {
+    transform: none;
+  }
+}
+.analytics-preferences {
+  margin: 0 5%;
+  padding: 16px 0 24px;
+  color: #aebba3;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.analytics-preferences details {
+  max-width: 720px;
+}
+.analytics-preferences summary {
+  cursor: pointer;
+  width: fit-content;
+}
+.analytics-preferences a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.analytics-preferences p {
+  margin: 12px 0;
+}
+.analytics-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.analytics-choices button {
+  border: 1px solid #647456;
+  border-radius: 5px;
+  background: transparent;
+  color: #deead1;
+  padding: 9px 12px;
+}
+.analytics-choices button:hover {
+  background: #293322;
+}
+.analytics-choices button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.analytics-note {
+  color: #93a184;
+}

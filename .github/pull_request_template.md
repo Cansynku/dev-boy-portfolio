@@ -4,6 +4,7 @@
 
 ## Validación
 
+- [ ] `npm test`
 - [ ] `npm run check`
 - [ ] `npm run build`
 - [ ] Diff revisado; sin secretos ni datos personales nuevos
