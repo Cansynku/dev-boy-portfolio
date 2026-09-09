@@ -1,0 +1,472 @@
+/* Second edition: tactile controls, screen transitions and reading cues. */
+.site {
+  background:
+    radial-gradient(ellipse at 68% 39%, #34402a60, transparent 49%),
+    radial-gradient(circle at 6% 85%, #29332930, transparent 32%), #101211;
+}
+.intro h1 em {
+  background: linear-gradient(110deg, #dcf6b7, #a8d577);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.console {
+  transition:
+    box-shadow 0.4s,
+    transform 0.4s;
+  background: linear-gradient(
+    105deg,
+    #e7e6df 0%,
+    #d4d5cb 37%,
+    #bdc1b5 90%,
+    #a9b09f 100%
+  );
+}
+.console:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    #ffffff18,
+    transparent 30%,
+    transparent 65%,
+    #313c2110
+  );
+  box-shadow: inset 0 7px 0 #ffffff15;
+}
+.console-top {
+  align-items: center;
+}
+.power-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: 0;
+  color: #535c4b;
+  padding: 0;
+  font:
+    10px 'Courier New',
+    monospace;
+  letter-spacing: 1px;
+  min-height: 16px;
+}
+.power-switch > span {
+  display: block;
+  width: 22px;
+  height: 9px;
+  border-radius: 5px;
+  background: #7d8474;
+  box-shadow: inset 0 2px 3px #333a28;
+}
+.power-switch > span:after {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 7px;
+  border-radius: 3px;
+  background: #d7dccc;
+  margin: 1px 1px 1px auto;
+  box-shadow: 0 1px 2px #252f24;
+}
+.power-switch:hover > span:after {
+  background: #e9f8cd;
+}
+.bezel {
+  background: linear-gradient(135deg, #727580, #5b6069);
+  box-shadow:
+    inset 0 2px 4px #282c4266,
+    0 1px 0 #fbfbed99;
+}
+.lcd {
+  isolation: isolate;
+  background: radial-gradient(ellipse at 40% 20%, #c3d292, #a9be74 85%);
+  overflow: hidden;
+}
+.lcd:after {
+  z-index: 3;
+  background: repeating-linear-gradient(
+    0deg,
+    #26381609 0px,
+    #26381609 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+.screen-home {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  letter-spacing: 0.3px;
+}
+.screen-home:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.screen-home:focus-visible {
+  outline: 2px solid #27351c;
+  outline-offset: 3px;
+}
+.boot-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  background: #b3c881;
+  pointer-events: none;
+  animation: boot-away 1.05s forwards;
+}
+.boot-screen > strong {
+  font-size: 62px;
+  letter-spacing: -7px;
+  line-height: 1;
+  font-family: 'Courier New', monospace;
+  animation: boot-logo 0.5s ease-out both;
+}
+.boot-screen > strong > span {
+  color: #546c39;
+}
+.boot-screen > span {
+  font:
+    11px 'Courier New',
+    monospace;
+  letter-spacing: 2px;
+}
+.boot-screen > i {
+  width: 100px;
+  height: 3px;
+  background: #293c1a;
+  transform-origin: left;
+  animation: boot-load 0.75s ease-out both;
+}
+.screen-page {
+  animation: screen-in 0.22s ease-out;
+}
+.game-menu button {
+  transition:
+    background 0.12s,
+    color 0.12s,
+    transform 0.12s;
+  border-radius: 1px;
+}
+.game-menu button.selected {
+  box-shadow: 2px 2px 0 #435a2d3d;
+  transform: translateX(2px);
+}
+.game-menu button:active {
+  transform: translateX(4px);
+}
+.lcd-status {
+  min-height: 29px;
+}
+.reading-progress {
+  height: 2px;
+  background: #72894c44;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+.reading-progress i {
+  height: 100%;
+  display: block;
+  background: #344b22;
+  transition: width 0.15s;
+}
+.screen-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 5px 0;
+  color: #b0bca3;
+  font-size: 12px;
+  line-height: 1.5;
+  min-height: 36px;
+}
+.screen-caption > span:first-child {
+  max-width: 340px;
+}
+.explored {
+  flex-shrink: 0;
+  font:
+    11px 'Courier New',
+    monospace;
+  color: #a9c28f;
+  border: 1px solid #455039;
+  border-radius: 3px;
+  padding: 4px 7px;
+}
+.under-console {
+  margin-top: 10px;
+}
+.under-console > button {
+  border: 1px solid #39432f;
+  border-radius: 5px;
+  min-width: 32px;
+  min-height: 32px;
+  display: grid;
+  place-items: center;
+  transition:
+    color 0.15s,
+    background 0.15s;
+}
+.under-console > button:hover {
+  background: #c6ed8b;
+  color: #18230f;
+}
+.orbit-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1.5px;
+  color: #9baa8d;
+}
+.live-light {
+  width: 5px;
+  height: 5px;
+  background: #c6ed8b;
+  box-shadow: 0 0 10px #c6ed8b55;
+  border-radius: 50%;
+}
+.minor button {
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.minor button:active {
+  transform: translateY(2px);
+  box-shadow: inset 1px 1px 2px #515a45;
+}
+.ab button {
+  transition:
+    filter 0.15s,
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.ab button:hover {
+  filter: brightness(1.12);
+}
+.dpad button:hover {
+  color: #adb5a4;
+}
+.side-note .section-dots {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: none;
+}
+.section-dots button {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #768365;
+  border-radius: 50%;
+  background: none;
+  position: relative;
+  padding: 0;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.section-dots button:before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+.section-dots button.active {
+  background: #c6ed8b;
+  border-color: #c6ed8b;
+  box-shadow: 0 0 0 4px #c6ed8b12;
+}
+.section-dots button:hover {
+  background: #a9bf8f;
+}
+.reader .job {
+  position: relative;
+  padding-left: 22px;
+  border-left: 1px solid #bcc8ad;
+  border-top: 0;
+}
+.reader .job:before {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  left: -5px;
+  top: 20px;
+  background: #6b8550;
+  box-shadow: 0 0 0 4px #f2f1eb;
+}
+.reader .job .eyebrow {
+  color: #5a7243;
+}
+.reader .lcd-tags span {
+  background: #e4eadb;
+  border: 1px solid #c7d2ba;
+  border-radius: 4px;
+}
+.reader .profile-line img {
+  border-radius: 9px;
+  box-shadow: 5px 5px 0 #d9e2ce;
+}
+.reader-content {
+  scrollbar-width: thin;
+  scrollbar-color: #99ab84 #e6ebdf;
+  scroll-padding-top: 20px;
+}
+.reader .lcd-download {
+  border-radius: 5px;
+}
+.lcd .job h3 {
+  letter-spacing: -0.4px;
+}
+.lcd .client {
+  font-size: 14px;
+}
+.lcd-body {
+  overscroll-behavior: contain;
+}
+.console button:focus-visible {
+  outline-color: #465f27;
+}
+.reader a:focus-visible {
+  outline-color: #465f27;
+}
+@keyframes boot-away {
+  0%,
+  72% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes boot-logo {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes boot-load {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes screen-in {
+  from {
+    opacity: 0.2;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (hover: hover) and (min-width: 1051px) {
+  .console:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      inset 3px 3px 2px #faf9edaa,
+      inset -5px -5px 2px #757a6a,
+      8px 15px 0 #62685b,
+      18px 32px 50px #000a;
+  }
+}
+@media (max-width: 740px) {
+  .stage {
+    gap: 23px;
+  }
+  .screen-caption {
+    font-size: 12px;
+    margin-top: 24px;
+  }
+  .under-console {
+    flex-wrap: wrap;
+  }
+  .intro h1 {
+    font-size: 39px;
+  }
+  .intro > p {
+    margin-bottom: 8px;
+  }
+  .console-zone {
+    padding-right: 6px;
+  }
+  .lcd-body {
+    height: 320px;
+  }
+  .contact-list {
+    font-size: 14px;
+  }
+  .reader-title {
+    font-size: 21px !important;
+  }
+}
+@media (max-width: 380px) {
+  .console {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .bezel {
+    padding-right: 11px;
+    padding-left: 25px;
+  }
+  .lcd-body {
+    padding: 14px 10px;
+  }
+  .menu-heading h2 {
+    font-size: 24px;
+  }
+  .eyebrow {
+    font-size: 11px;
+  }
+  .console-brand {
+    font-size: 15px;
+  }
+  .console-brand strong {
+    font-size: 21px;
+  }
+  .under-console > span {
+    font-size: 10px;
+  }
+  .reader {
+    padding: 16px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-screen {
+    display: none;
+  }
+  .console,
+  .game-menu button,
+  .screen-page {
+    transition: none;
+    animation: none;
+  }
+  .console:hover {
+    transform: none;
+  }
+}

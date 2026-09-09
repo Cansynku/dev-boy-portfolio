@@ -1,0 +1,176 @@
+/* One brief encounter on entry; the portfolio underneath keeps its state. */
+.arrival-intro {
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 65px 3vw 75px;
+  background: #101d23;
+  color: #f6efcf;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.arrival-speedlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 18px,
+    #74b4c322 18px 21px,
+    transparent 21px 40px,
+    #c1e6eb33 40px 42px
+  );
+}
+.arrival-scene {
+  position: relative;
+  width: min(1100px, 94vw, calc((100dvh - 170px) * 1.5));
+  text-align: center;
+  opacity: 0;
+}
+.arrival-picture {
+  border: 3px solid #b9c8ad;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 5px #0b151a,
+    0 25px 80px #0008;
+  background: #c1dce1;
+}
+.arrival-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.arrival-kicker {
+  display: block;
+  margin-bottom: 15px;
+  color: #f0d877;
+  font: bold clamp(9px, 1.2vw, 13px) var(--font-mono);
+  letter-spacing: 4px;
+}
+.arrival-scene > p {
+  font: clamp(10px, 1.3vw, 14px) var(--font-mono);
+  margin: 18px 0 12px;
+}
+.arrival-scene > p span {
+  color: #e8c953;
+}
+.arrival-countdown {
+  margin: auto;
+  width: 140px;
+  height: 3px;
+  background: #bdceab33;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.arrival-countdown i {
+  display: block;
+  height: 100%;
+  background: #d9ec9b;
+  transform-origin: left;
+}
+.arrival-skip {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  border: 1px solid #d8e2c1;
+  border-radius: 7px;
+  padding: 12px 17px;
+  background: #172621;
+  color: #f5f0d1;
+  font: 12px var(--font-mono);
+  cursor: pointer;
+}
+.arrival-skip span {
+  margin-left: 12px;
+  color: #c6de95;
+}
+.arrival-skip:focus-visible {
+  outline: 3px solid #ebd574;
+  outline-offset: 4px;
+}
+.arrival-ready {
+  animation: arrival-exit 450ms 9550ms ease-in both;
+}
+.arrival-ready .arrival-scene {
+  animation: arrival-slide 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.arrival-ready .arrival-speedlines {
+  animation: arrival-lines 800ms ease-out both;
+}
+.arrival-ready .arrival-countdown i {
+  animation: arrival-time 9550ms linear both;
+}
+@keyframes arrival-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw) skewX(-7deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(-10px) skewX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes arrival-lines {
+  from {
+    transform: translateX(-20%);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 0.25;
+  }
+}
+@keyframes arrival-time {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes arrival-exit {
+  to {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+}
+@media (max-width: 600px) {
+  .arrival-scene {
+    width: 94vw;
+  }
+  .arrival-intro {
+    padding-inline: 3vw;
+  }
+  .arrival-kicker {
+    letter-spacing: 2px;
+  }
+  .arrival-skip {
+    right: 16px;
+    bottom: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arrival-intro {
+    display: none;
+  }
+  .arrival-ready,
+  .arrival-ready .arrival-scene,
+  .arrival-ready .arrival-speedlines,
+  .arrival-ready .arrival-countdown i {
+    animation: none;
+  }
+}
