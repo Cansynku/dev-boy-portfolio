@@ -1,0 +1,195 @@
+/* The music pack joins the project shelf and occupies the same console slot. */
+.cartridge-shelf {
+  flex-wrap: wrap;
+  gap: 38px;
+  align-items: start;
+}
+.cartridge-shelf > .project-cartridge,
+.music-cartridge-holder {
+  width: min(260px, 40%);
+}
+.music-cartridge-holder {
+  order: 3;
+}
+.music-cartridge-holder .project-cartridge {
+  width: 100%;
+}
+.cartridge-yellow {
+  --plastic: #ecc43b;
+  --edge: #9c731d;
+  --shine: #ffea80;
+  transform: rotate(5deg);
+}
+.cartridge-yellow .cartridge-emboss {
+  color: #705115;
+}
+.cartridge-yellow .cartridge-bottom {
+  color: #49350b;
+  text-shadow: 0 1px #fff5;
+}
+.cartridge-yellow .yellow-label {
+  background:
+    radial-gradient(circle at 50% 60%, #fff8b5 0 24%, transparent 25%),
+    repeating-conic-gradient(
+      from 5deg at 50% 60%,
+      #ffdc41 0deg 18deg,
+      #f4b625 18deg 36deg
+    );
+}
+.cartridge-yellow .music-pikachu {
+  width: 48%;
+  height: auto;
+  min-height: 0;
+  flex: 1;
+}
+.cartridge-yellow .cartridge-label strong {
+  margin-top: 5px;
+}
+.music-cartridge-holder .music-help {
+  line-height: 1.6;
+  margin-top: 22px;
+}
+.console-zone .orbit-label {
+  margin-bottom: 56px;
+}
+.console {
+  overflow: visible;
+}
+.cartridge-slot {
+  position: absolute;
+  top: -145px;
+  height: 145px;
+  left: 28%;
+  width: 44%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.docked-cartridge {
+  --dock-color: #b92e40;
+  --dock-edge: #701327;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  height: 140px;
+  border: 2px solid #ffffff45;
+  border-radius: 7px 7px 0 0;
+  padding: 7px 4px;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 7px, #0002 7px 9px),
+    var(--dock-color);
+  color: #fff2c9;
+  box-shadow:
+    inset 0 4px #fff3,
+    inset -5px 0 var(--dock-edge);
+  font: bold 9px var(--font-mono);
+  pointer-events: auto;
+  animation: insert-pack 1000ms cubic-bezier(0.22, 0.8, 0.25, 1) both;
+}
+.docked-cartridge small {
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+.dock-yellow {
+  --dock-color: #e5bd36;
+  --dock-edge: #9c731d;
+  color: #49350b;
+}
+.dock-devboy {
+  --dock-color: #456b43;
+  --dock-edge: #203f2c;
+}
+.console-portable .cartridge-slot {
+  left: 40%;
+  width: 20%;
+}
+.console-portable .docked-cartridge {
+  font-size: clamp(5px, 1cqw, 9px);
+}
+.console-portable .docked-cartridge small {
+  font-size: clamp(4px, 0.8cqw, 7px);
+}
+@keyframes insert-pack {
+  0% {
+    opacity: 0;
+    transform: translateY(-140px) rotate(-8deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(113px);
+  }
+  100% {
+    transform: translateY(110px);
+  }
+}
+.bonus-hint {
+  margin: 26px auto 0;
+  max-width: 440px;
+  padding: 13px 16px;
+  border: 1px dashed #74875e;
+  border-radius: 10px;
+  background: #1a2516;
+  color: #c9ddb5;
+  font-size: 12px;
+}
+.bonus-hint summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+.bonus-hint p {
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.bonus-hint code {
+  display: block;
+  padding: 13px;
+  letter-spacing: 3px;
+  font-size: 20px;
+  text-align: center;
+  color: #f5da77;
+}
+.hint-directions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.hint-directions button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #899b6e;
+  border-radius: 8px;
+  background: #34472b;
+  color: #f0edc9;
+  font-size: 22px;
+}
+@media (max-width: 480px) {
+  .cartridge-shelf {
+    gap: 25px;
+  }
+  .cartridge-shelf > .project-cartridge,
+  .music-cartridge-holder {
+    width: 44%;
+  }
+  .music-cartridge-holder {
+    width: 55%;
+    margin-top: 12px;
+  }
+  .docked-cartridge {
+    font-size: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .docked-cartridge {
+    animation: none;
+    transform: translateY(110px);
+  }
+}

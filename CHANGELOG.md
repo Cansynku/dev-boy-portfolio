@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — 2026-09-09
+
+- Consola portátil alternativa con pantalla compartida y transición animada.
+- Cartuchos de proyectos, inserción visual y reproductor musical opcional.
+- Intro de 10 segundos, vista rápida y bonus ilustrado con pista accesible.
+- Datos del CV y proyectos separados de la presentación; estilos organizados por función.
+- Guía de validación y procedencia de los medios; grabación excluida de la distribución pública.
+
 ## 1.1.0 — 2026-09-08
 
 - Estadísticas voluntarias de visitas con Cloudflare Web Analytics y panel privado del titular.

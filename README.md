@@ -10,7 +10,7 @@ Mi recorrido profesional dentro de una consola portátil.
 
 ## El proyecto
 
-Dev Boy presenta mi experiencia, tecnologías, formación y contacto en una interfaz inspirada en Game Boy, con teclado, controles táctiles, sonido opcional y modo lectura.
+Dev Boy presenta mi experiencia, tecnologías, formación y contacto en una interfaz inspirada en Game Boy y PSP, con teclado, controles táctiles, sonido opcional y modo lectura.
 
 Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicación React y TypeScript**: presenta mi perfil; no contiene servicios Java ni demuestra una arquitectura backend bancaria.
 
@@ -20,6 +20,11 @@ Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicaci
 - Cruceta y botones A/B; sonido desactivado inicialmente.
 - Modo lectura con índice y descarga del CV.
 - Progreso de lectura y secciones visitadas durante la sesión.
+- Dos consolas intercambiables con una pantalla compartida y preferencia guardada.
+- Cartuchos de proyectos: Backend Rescue y Dev Boy, con enlaces a código y evidencias.
+- Cartucho musical opcional, inserción animada y reproducción iniciada por el visitante.
+- Intro de encuentro de 10 segundos, con opción de saltarla y salida ante errores de imagen.
+- Vista rápida «Tengo un minuto» y bonus ilustrado desbloqueable con una pista.
 - Diseño adaptable y preferencia de movimiento reducido.
 
 | Control        | Acción                               |
@@ -32,11 +37,12 @@ Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicaci
 
 ## Recorrido por el código
 
-1. [Página principal](app/page.tsx): contenido, estado y controles.
-2. [Estilos](app/globals.css): consola y diseño adaptable.
-3. [Layout](app/layout.tsx): idioma y metadatos.
-4. [Arquitectura y calidad](docs/architecture.md).
-5. [GitFlow y contribución](CONTRIBUTING.md).
+1. [Página principal](app/page.tsx): coordina estado, navegación y controles.
+2. [Datos del CV](app/data/profile.ts) y [proyectos](app/data/projects.ts): contenido editable.
+3. [Componentes](app/components) y [estilos por función](app/styles): presentación; [globals.css](app/globals.css) conserva el orden de las capas.
+4. [Layout](app/layout.tsx): idioma y metadatos.
+5. [Arquitectura y calidad](docs/architecture.md).
+6. [GitFlow y contribución](CONTRIBUTING.md).
 
 ## Stack real
 
@@ -65,7 +71,13 @@ npm run lint:all     # catálogo completo heredado
 npm audit            # avisos actuales
 ```
 
-CI ejecuta instalación reproducible, tipos, lint de aplicación y build. Solo tiene permisos de lectura. No se declara cobertura de navegador: los checks estáticos no sustituyen pruebas de interacción.
+CI ejecuta instalación reproducible, pruebas, tipos, lint de aplicación y build. Solo tiene permisos de lectura. No se declara cobertura de navegador: los checks estáticos no sustituyen pruebas de interacción.
+
+## Recursos y reproducción local
+
+El código, las ilustraciones y los controles del cartucho musical se incluyen. La grabación MP3 no se distribuye: para escuchar música en tu copia, aporta un archivo autorizado en `public/audio/title-screen.mp3`. Esa ruta está excluida de Git. Sin archivo, el portfolio sigue funcionando y muestra un aviso al intentar reproducirlo. No hay reproducción automática.
+
+Consulta el [inventario de materiales](THIRD_PARTY_NOTICES.md) y la [lista de comprobaciones manuales](docs/verification.md). El bonus es una ilustración animada, no un combate jugable.
 
 ## Publicación
 
@@ -81,6 +93,6 @@ La integración de [Cloudflare Web Analytics](docs/analytics.md) mide solo visit
 
 **© 2026 Javier Cano García. Derechos reservados sobre sus aportaciones originales.** Repositorio público para consulta y evaluación profesional; no se concede una licencia open source sobre las aportaciones propias. Reutilizarlas en otro portfolio requiere permiso, salvo los usos legales o expresamente autorizados. Consulta [propiedad y condiciones de uso](COPYRIGHT.md) y [avisos de terceros](THIRD_PARTY_NOTICES.md).
 
-El contenido procede de mi CV; los entornos previstos se identifican como tales. Foto y PDF son material personal: sustitúyelos si adaptas el proyecto. Game Boy es una marca de Nintendo; este proyecto no está afiliado a Nintendo.
+El contenido procede de mi CV; los entornos previstos se identifican como tales. Foto y PDF son material personal: sustitúyelos si adaptas el proyecto. Game Boy, Pokémon, PSP y Sony se citan como referencias de terceros; este proyecto no está afiliado a sus titulares.
 
 Parte de una plantilla de Sites y se ha desarrollado con asistencia de IA. Los componentes de terceros conservan sus licencias; la reserva de derechos no los convierte en propiedad exclusiva de Javier.

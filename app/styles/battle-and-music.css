@@ -1,0 +1,207 @@
+/* Music is opt-in; the provided recording only loads after pressing play. */
+.music-pikachu {
+  width: 82px;
+  flex-shrink: 0;
+  height: 82px;
+  filter: drop-shadow(1px 3px 0 #9a702c55);
+}
+.music-help {
+  display: block;
+  text-align: center;
+  margin-top: 13px;
+  color: #b1bea4;
+  font-size: 10px;
+}
+.music-playing .music-pikachu {
+  animation: pika-bop 850ms ease-in-out infinite alternate;
+}
+@keyframes pika-bop {
+  from {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: translateY(-4px) rotate(4deg);
+  }
+}
+.reader.battle-dialog {
+  width: min(1100px, 96vw) !important;
+  max-width: 1100px !important;
+  padding: 20px;
+  background: #17261e;
+  color: #f4f2db;
+  border: 2px solid #a0b681;
+}
+.battle-dialog > h2 {
+  color: #f4e797;
+}
+.battle-dialog > p {
+  color: #c3d2b2;
+}
+.battle-reveal {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 3px solid #101810;
+  border-radius: 5px;
+  background: #101810;
+}
+.battle-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: battle-arrive 1700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.battle-curtain {
+  position: absolute;
+  inset: 0;
+  background: #101810;
+  z-index: 2;
+  pointer-events: none;
+}
+.curtain-top {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 44%,
+    82% 54%,
+    64% 46%,
+    46% 55%,
+    25% 47%,
+    0 55%
+  );
+  animation: curtain-up 1400ms 250ms cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+.curtain-bottom {
+  clip-path: polygon(
+    0 54%,
+    25% 46%,
+    46% 54%,
+    64% 45%,
+    82% 53%,
+    100% 43%,
+    100% 100%,
+    0 100%
+  );
+  animation: curtain-down 1400ms 250ms cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+.battle-grass {
+  position: absolute;
+  inset: 40% -5% -5%;
+  display: flex;
+  align-items: end;
+  gap: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: grass-part 1300ms 300ms ease-in both;
+}
+.battle-grass i {
+  width: 9%;
+  height: 75%;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #173c2b 45%, #537c3c 46%);
+  clip-path: polygon(
+    5% 100%,
+    0 14%,
+    34% 55%,
+    48% 0,
+    62% 57%,
+    100% 21%,
+    88% 100%
+  );
+  transform: rotate(-9deg);
+}
+.battle-grass i:nth-child(even) {
+  height: 94%;
+  transform: rotate(9deg);
+  background: linear-gradient(90deg, #285c31 45%, #86a846 46%);
+}
+.battle-intro {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  color: #ecf3c9;
+  font: bold clamp(12px, 2.6vw, 29px) var(--font-mono);
+  text-shadow: 3px 3px #102315;
+  pointer-events: none;
+  animation: encounter-text 1600ms both;
+}
+.battle-bonus-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  font-size: 12px;
+}
+.battle-bonus-footer button {
+  border: 1px solid #a1b879;
+  border-radius: 7px;
+  background: #34482c;
+  color: #edf6d7;
+  padding: 9px 12px;
+}
+@keyframes curtain-up {
+  to {
+    transform: translateY(-105%);
+  }
+}
+@keyframes curtain-down {
+  to {
+    transform: translateY(105%);
+  }
+}
+@keyframes grass-part {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateX(-2%);
+  }
+  45% {
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateY(110%);
+  }
+}
+@keyframes encounter-text {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  70%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes battle-arrive {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media (max-width: 480px) {
+  .music-pikachu {
+    width: 65px;
+    height: 65px;
+  }
+  .reader.battle-dialog {
+    padding: 14px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .music-playing .music-pikachu,
+  .battle-illustration {
+    animation: none;
+  }
+  .battle-curtain,
+  .battle-grass,
+  .battle-intro {
+    display: none;
+  }
+}
