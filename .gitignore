@@ -40,5 +40,6 @@ next-env.d.ts
 # TypeScript incremental cache
 *.tsbuildinfo
 
-# Optional recording supplied locally; not licensed for repository distribution
+# Keep additional local recordings out of Git; include the selected soundtrack only.
 /public/audio/*.mp3
+!/public/audio/title-screen.mp3
