@@ -1,5 +1,6 @@
 'use client';
 import type { ReactNode } from 'react';
+import GitHubStarCartridge from './components/github-star-cartridge';
 
 import { projects, type ProjectId } from './data/projects';
 export type { ProjectId } from './data/projects';
@@ -52,11 +53,13 @@ export default function ProjectCartridges({
           <h2>Cada cartucho, una aventura.</h2>
         </div>
         <p>
-          Rojo y verde para explorar proyectos. Amarillo para ponerle música.
+          Proyectos para explorar, música para acompañarte y una estrella para
+          seguir creciendo.
         </p>
       </div>
       <div className="cartridge-shelf">
         {children}
+        <GitHubStarCartridge />
         {projects.map((project, index) => (
           <button
             key={project.id}
