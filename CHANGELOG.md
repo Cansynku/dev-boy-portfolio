@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 — 2026-09-09
 
 - Consola portátil alternativa con pantalla compartida y transición animada.
 - Cartuchos de proyectos, inserción visual y reproductor musical opcional.
