@@ -22,7 +22,8 @@ Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicaci
 - Progreso de lectura y secciones visitadas durante la sesión.
 - Dos consolas intercambiables con una pantalla compartida y preferencia guardada.
 - Cartuchos de proyectos: Backend Rescue y Dev Boy, con enlaces a código y evidencias.
-- Cartucho musical opcional, inserción animada y reproducción iniciada por el visitante.
+- Cartucho musical, inserción animada y reproducción iniciada por el visitante.
+- Cartucho Verde Estrella con enlace al repositorio para apoyarlo en GitHub.
 - Intro de encuentro de 10 segundos, con opción de saltarla y salida ante errores de imagen.
 - Vista rápida «Tengo un minuto» y bonus ilustrado desbloqueable con una pista.
 - Diseño adaptable y preferencia de movimiento reducido.
@@ -75,7 +76,9 @@ CI ejecuta instalación reproducible, pruebas, tipos, lint de aplicación y buil
 
 ## Recursos y reproducción local
 
-El código, las ilustraciones y los controles del cartucho musical se incluyen. La grabación MP3 no se distribuye: para escuchar música en tu copia, aporta un archivo autorizado en `public/audio/title-screen.mp3`. Esa ruta está excluida de Git. Sin archivo, el portfolio sigue funcionando y muestra un aviso al intentar reproducirlo. No hay reproducción automática.
+El cartucho amarillo reproduce `public/audio/title-screen.mp3`, la grabación de terceros aportada por el titular del portfolio para su publicación. No hay reproducción automática: hace falta pulsar el cartucho. Los avisos de terceros recogen la procedencia declarada y los límites de la información disponible sobre su licencia.
+
+El cartucho Verde Estrella abre este repositorio en otra pestaña. La estrella se concede voluntariamente mediante el botón Star de GitHub; el portfolio no la añade automáticamente.
 
 Consulta el [inventario de materiales](THIRD_PARTY_NOTICES.md) y la [lista de comprobaciones manuales](docs/verification.md). El bonus es una ilustración animada, no un combate jugable.
 

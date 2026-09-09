@@ -1,0 +1,103 @@
+/* The community cartridge links to GitHub; it never submits a star. */
+.cartridge-shelf {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+}
+.cartridge-shelf > .project-cartridge,
+.cartridge-shelf > .music-cartridge-holder,
+.cartridge-shelf > .star-cartridge-holder {
+  width: 100%;
+  min-width: 0;
+}
+.star-cartridge-holder {
+  order: 4;
+}
+.star-cartridge-holder .project-cartridge {
+  width: 100%;
+  display: block;
+}
+.cartridge-leaf {
+  --plastic: #61ab40;
+  --edge: #285b2e;
+  --shine: #b9e776;
+  transform: rotate(-4deg);
+}
+.cartridge-leaf .cartridge-emboss {
+  color: #214d2c;
+}
+.cartridge-leaf .cartridge-bottom {
+  color: #163c23;
+  text-shadow: 0 1px #e1ff9877;
+}
+.cartridge-leaf .leaf-label {
+  background: radial-gradient(
+    ellipse at 50% 65%,
+    #f1fac4 0%,
+    #aad974 55%,
+    #4a9c58 100%
+  );
+}
+.cartridge-leaf .cartridge-edition {
+  background: #204b35;
+}
+.cartridge-leaf .cartridge-label strong {
+  color: #fff0a7;
+  -webkit-text-stroke-color: #2a5939;
+  text-shadow: 2px 2px #2a5939;
+  font-size: clamp(16px, 2.5vw, 26px);
+}
+.leaf-star-art {
+  width: 86%;
+  flex: 1;
+  min-height: 0;
+  overflow: visible;
+}
+.leaf-star {
+  transform-origin: 85px 60px;
+  transition: transform 250ms ease;
+}
+.cartridge-leaf:hover .leaf-star,
+.cartridge-leaf:focus-visible .leaf-star {
+  transform: translateY(-4px) rotate(8deg);
+}
+.star-cartridge-help {
+  margin: 22px 0 0;
+  color: #c8d6b6;
+  font-size: 12px;
+  line-height: 1.65;
+  text-align: center;
+}
+.star-cartridge-help span {
+  display: block;
+  margin-top: 5px;
+  color: #9eaf90;
+  font-size: 11px;
+}
+@media (max-width: 900px) {
+  .cartridge-shelf {
+    grid-template-columns: repeat(2, minmax(0, 260px));
+    justify-content: center;
+    gap: 38px;
+  }
+}
+@media (max-width: 480px) {
+  .cartridge-shelf {
+    gap: 28px 20px;
+  }
+  .cartridge-shelf > .music-cartridge-holder {
+    margin-top: 0;
+  }
+  .star-cartridge-help {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .leaf-star {
+    transition: none;
+  }
+  .cartridge-leaf:hover .leaf-star,
+  .cartridge-leaf:focus-visible .leaf-star {
+    transform: none;
+  }
+}
