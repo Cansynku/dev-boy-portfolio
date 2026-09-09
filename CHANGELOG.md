@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.3.0 — 2026-09-09
 
 - Cartucho Verde Estrella con enlace voluntario al repositorio de GitHub.
 - Biblioteca de cuatro cartuchos adaptable a escritorio y móvil.
