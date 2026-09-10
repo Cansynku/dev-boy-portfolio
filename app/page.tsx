@@ -275,20 +275,20 @@ export default function Home() {
               <span /> DEV BOY · EDICIÓN 2026
             </div>
             <h1>
-              Serio con
+              Serio con{' '}
               <br />
-              el código.
+              el código.{' '}
               <br />
               <em>
-                Con ganas
+                Con ganas{' '}
                 <br />
                 de jugar.
               </em>
             </h1>
             <p>
-              Soy Javier. Desarrollo sistemas backend con Java y Spring Boot.
+              Soy Javier. Desarrollo sistemas backend con Java y Spring Boot.{' '}
               <br />
-              APIs, microservicios e integración de sistemas.
+              APIs, microservicios e integración de sistemas.{' '}
               <br />A los mandos, tú.
             </p>
             <div className="career-context">
