@@ -46,10 +46,17 @@ export default function ProjectCartridges({
   onEject: () => void;
 }) {
   return (
-    <section className="cartridge-library" aria-label="Cartuchos de proyectos">
+    <section
+      id="cartridges"
+      tabIndex={-1}
+      className="cartridge-library"
+      aria-label="Cartuchos de proyectos"
+    >
       <div className="library-heading">
         <div>
-          <span className="small-label">ELIGE TU SIGUIENTE MISIÓN</span>
+          <span className="small-label">
+            RUTA 02 · ELIGE TU SIGUIENTE MISIÓN
+          </span>
           <h2>Cada cartucho, una aventura.</h2>
         </div>
         <p>

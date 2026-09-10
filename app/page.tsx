@@ -1,5 +1,6 @@
 'use client';
 import Content from './components/cv-content';
+import DiscoveryTrail from './components/discovery-trail';
 import PortableShell from './components/portable-shell';
 import { sectionIds, sections, sectionHints, links } from './data/profile';
 import ProjectCartridges, {
@@ -40,7 +41,7 @@ export default function Home() {
     'classic',
   );
   const [section, setSection] = useState<number | null>(null);
-  const [sound, setSound] = useState(false);
+  const [sound, setSound] = useState(true);
   const [reading, setReading] = useState(false);
   const screen = useRef<HTMLDivElement>(null);
   const audio = useRef<AudioContext | null>(null);
@@ -312,6 +313,9 @@ export default function Home() {
             >
               ⚡ Tengo un minuto
             </button>
+            <a className="explore-cartridges" href="#cartridges">
+              ↓ Descubre los cartuchos · proyectos y música
+            </a>
             <div className="intro-bottom">
               <span className="small-label">MI STACK PRINCIPAL</span>
               <div className="techline">
@@ -753,6 +757,9 @@ export default function Home() {
             <span>EXPLORA MI RECORRIDO</span>
           </aside>
         </main>
+        <DiscoveryTrail
+          suspended={introActive || reading || quickView || secret}
+        />
         <ProjectCartridges
           active={cartridge}
           onEject={back}
