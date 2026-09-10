@@ -100,9 +100,9 @@
   text-align: center;
 }
 .cartridge-devboy {
-  --plastic: #426d4b;
-  --edge: #203f2c;
-  --shine: #7ca56e;
+  --plastic: #2354bc;
+  --edge: #102e78;
+  --shine: #5d8de3;
   transform: rotate(6deg);
 }
 .project-cartridge:hover {
@@ -173,7 +173,16 @@
   overflow: hidden;
 }
 .cartridge-devboy .cartridge-label {
-  background: radial-gradient(circle at 50% 60%, #d5ec9f, #75ab80);
+  background: radial-gradient(circle at 50% 60%, #d9f0ff, #78b3e6 60%, #417cc4);
+}
+.cartridge-devboy .cartridge-emboss {
+  color: #102b65;
+}
+.cartridge-devboy .cartridge-edition {
+  background: #173a79;
+}
+.cartridge-devboy .cartridge-art {
+  color: #174b99;
 }
 .cartridge-edition {
   font: bold clamp(6px, 1vw, 9px) var(--font-mono);

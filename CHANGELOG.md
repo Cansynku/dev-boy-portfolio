@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.0 — 2026-09-10
+
+- Ruta de descubrimiento con entrenador pixelado que señala los cartuchos desde la primera pantalla.
+- Acceso directo con foco en el destino, cierre voluntario y retirada de la pista al descubrir la biblioteca.
+- Enlace permanente a proyectos y música junto a la presentación; movimiento reducido respetado.
+
+- Cartucho Dev Boy azul, con etiqueta y pieza insertada a juego.
+- Sonido de botones activado inicialmente y control para silenciarlo; música solo por interacción.
+
 ## 1.3.0 — 2026-09-09
 
 - Cartucho Verde Estrella con enlace voluntario al repositorio de GitHub.

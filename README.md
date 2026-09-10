@@ -17,7 +17,7 @@ Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicaci
 ## Explorar
 
 - Seis pantallas: perfil, experiencia, stack, formación, idiomas y contacto.
-- Cruceta y botones A/B; sonido desactivado inicialmente.
+- Cruceta y botones A/B; efectos de los botones activados inicialmente y control para silenciarlos.
 - Modo lectura con índice y descarga del CV.
 - Progreso de lectura y secciones visitadas durante la sesión.
 - Dos consolas intercambiables con una pantalla compartida y preferencia guardada.

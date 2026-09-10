@@ -20,7 +20,7 @@ export const projects = [
   {
     id: 'devboy',
     title: 'Dev Boy',
-    edition: 'CAREER GREEN',
+    edition: 'CAREER BLUE',
     stack: 'React · TypeScript · CSS',
     repo: 'https://github.com/Cansynku/dev-boy-portfolio',
     description:
