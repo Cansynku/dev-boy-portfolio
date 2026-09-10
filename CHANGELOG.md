@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1 — 2026-09-10
+
+- Conserva los espacios entre palabras y frases de la presentación cuando los saltos de línea se ocultan en móvil.
+
 ## 1.4.0 — 2026-09-10
 
 - Ruta de descubrimiento con entrenador pixelado que señala los cartuchos desde la primera pantalla.
