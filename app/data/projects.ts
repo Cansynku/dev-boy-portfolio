@@ -11,11 +11,30 @@ export const projects = [
     approach:
       'Partir de una versión con limitaciones conocidas, reproducir el problema y conservar la evidencia del antes y el después.',
     result:
-      'Reintentos de pago, migraciones, validación y consultas con pruebas de regresión. La evolución se puede seguir en el código y las PRs.',
+      'Pagos sin duplicados, navegación por páginas y 73 pruebas PostgreSQL correctas en la verificación local de septiembre de 2026. La evolución se puede seguir en el código y las PRs.',
     limit:
       'Proyecto educativo independiente. Pagos simulados y datos sintéticos; no es un servicio de producción.',
     evidence:
       'https://github.com/Cansynku/spring-backend-rescue-lab/blob/main/docs/project-progress.md',
+  },
+  {
+    id: 'health',
+    title: 'Backend Health Check',
+    edition: 'REVIEW VIOLET',
+    stack: 'Método de revisión · Piloto',
+    repo: 'https://github.com/Cansynku/spring-backend-rescue-lab',
+    description:
+      'Un método para revisar un flujo backend y convertir la evidencia en acciones concretas.',
+    challenge:
+      '¿Qué podemos demostrar sobre un problema y qué falta por comprobar?',
+    approach:
+      'Acotar un flujo, revisar código y pruebas, separar hallazgos de hipótesis y proponer una corrección con criterios de aceptación.',
+    result:
+      'Checklist reutilizable, plantilla de informe y ejemplo del laboratorio. El piloto de Alf.io compara dos caminos de reserva mediante lectura de código.',
+    limit:
+      'Método de revisión en fase de piloto, no un escáner automático. Alf.io es código abierto de terceros: el análisis fue estático, sin reproducción dinámica ni corrección upstream. Sin clientes ni ingresos validados.',
+    evidence:
+      'https://github.com/Cansynku/spring-backend-rescue-lab/blob/main/docs/backend-health-check-checklist.md',
   },
   {
     id: 'devboy',
