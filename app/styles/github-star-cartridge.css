@@ -1,7 +1,7 @@
 /* The community cartridge links to GitHub; it never submits a star. */
 .cartridge-shelf {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 280px));
   gap: 30px;
 }
 .cartridge-shelf > .project-cartridge,

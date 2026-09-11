@@ -275,21 +275,18 @@ export default function Home() {
               <span /> DEV BOY · EDICIÓN 2026
             </div>
             <h1>
-              Serio con{' '}
-              <br />
-              el código.{' '}
-              <br />
+              Serio con <br />
+              el código. <br />
               <em>
-                Con ganas{' '}
-                <br />
+                Con ganas <br />
                 de jugar.
               </em>
             </h1>
             <p>
               Soy Javier. Desarrollo sistemas backend con Java y Spring Boot.{' '}
               <br />
-              APIs, microservicios e integración de sistemas.{' '}
-              <br />A los mandos, tú.
+              APIs, microservicios e integración de sistemas. <br />A los
+              mandos, tú.
             </p>
             <div className="career-context">
               <span>E-COMMERCE</span>
@@ -377,7 +374,9 @@ export default function Home() {
                         ? '♪ POKÉMON YELLOW'
                         : cartridge === 'rescue'
                           ? 'BACKEND RESCUE'
-                          : 'DEV BOY'}
+                          : cartridge === 'health'
+                            ? 'HEALTH CHECK'
+                            : 'DEV BOY'}
                     </span>
                     <small>INSERTADO · ⏏</small>
                   </button>

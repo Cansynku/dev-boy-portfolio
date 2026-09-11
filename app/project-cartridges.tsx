@@ -30,6 +30,27 @@ export function ProjectContent({ id }: { id: ProjectId }) {
         </a>
       </p>
       <p className="project-limit">{project.limit}</p>
+      {id === 'health' && (
+        <nav
+          className="health-evidence"
+          aria-label="Ejemplos del método de revisión"
+        >
+          <a
+            href="https://github.com/Cansynku/spring-backend-rescue-lab/blob/main/docs/backend-health-check-lab-example.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Informe de ejemplo ↗
+          </a>
+          <a
+            href="https://github.com/Cansynku/spring-backend-rescue-lab/blob/main/docs/alfio-review-pilot.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Piloto estático de Alf.io ↗
+          </a>
+        </nav>
+      )}
     </article>
   );
 }
@@ -67,7 +88,7 @@ export default function ProjectCartridges({
       <div className="cartridge-shelf">
         {children}
         <GitHubStarCartridge />
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <button
             key={project.id}
             className={`project-cartridge cartridge-${project.id}`}
@@ -75,12 +96,18 @@ export default function ProjectCartridges({
             onClick={() => onInsert(project.id)}
           >
             <span className="cartridge-ridges" aria-hidden="true" />
-            <span className="cartridge-emboss">DEV BOY · PROJECT PAK</span>
+            <span className="cartridge-emboss">
+              DEV BOY · {project.id === 'health' ? 'REVIEW' : 'PROJECT'} PAK
+            </span>
             <span className="cartridge-label">
               <span className="cartridge-edition">{project.edition}</span>
               <strong>{project.title}</strong>
               <span className="cartridge-art" aria-hidden="true">
-                {index === 0 ? '{ ⚡ }' : 'JC_'}
+                {project.id === 'rescue'
+                  ? '{ ⚡ }'
+                  : project.id === 'health'
+                    ? 'HC✓'
+                    : 'JC_'}
                 <i>★</i>
               </span>
               <span className="cartridge-tech">{project.stack}</span>

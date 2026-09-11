@@ -353,3 +353,31 @@
     animation: none;
   }
 }
+
+.cartridge-health {
+  --plastic: #7943b5;
+  --edge: #422366;
+  --shine: #bd8ee7;
+  transform: rotate(-3deg);
+}
+.cartridge-health .cartridge-label {
+  background: radial-gradient(circle at 50% 60%, #f4e9ff, #c3a5e0 65%, #9270bd);
+}
+.cartridge-health .cartridge-emboss {
+  color: #371e59;
+}
+.cartridge-health .cartridge-edition {
+  background: #46256a;
+}
+.cartridge-health .cartridge-art {
+  color: #573280;
+}
+.health-evidence {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.docked-cartridge.dock-health {
+  --dock-color: #7943b5;
+  --dock-edge: #422366;
+}
