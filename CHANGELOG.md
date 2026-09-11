@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0 — 2026-09-11
+
+- Cartucho violeta Backend Health Check: método de revisión, informe de ejemplo y piloto estático de Alf.io, con límites explícitos.
+- Biblioteca adaptada a cinco cartuchos y nombre/color propios al insertar Health Check.
+- Evidencia reciente del laboratorio Backend Rescue.
+
 ## 1.4.1 — 2026-09-10
 
 - Conserva los espacios entre palabras y frases de la presentación cuando los saltos de línea se ocultan en móvil.
