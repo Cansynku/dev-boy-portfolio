@@ -1,4 +1,70 @@
 /* Project cartridges: molded shells, illustrated labels and a reading-first case. */
+.rescue-case {
+  margin: 20px 0;
+  padding: 14px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.rescue-comparison {
+  display: grid;
+  gap: 12px;
+}
+.rescue-comparison > div {
+  border-left: 3px solid currentColor;
+  padding-left: 10px;
+}
+.rescue-case details {
+  border-top: 1px solid currentColor;
+  padding: 10px 0;
+}
+.rescue-case summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 0;
+}
+.rescue-case summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.rescue-case ul {
+  padding-left: 20px;
+}
+.rescue-case li + li {
+  margin-top: 8px;
+}
+.share-project button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.share-project button:focus-visible,
+.share-project input:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.share-project output:empty {
+  display: none;
+}
+.share-project output {
+  display: block;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+.share-project input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+}
 .quick-view-button {
   display: block;
   margin-top: 16px;
