@@ -1,5 +1,6 @@
 'use client';
 import Content from './components/cv-content';
+import { projects } from './data/projects';
 import DiscoveryTrail from './components/discovery-trail';
 import PortableShell from './components/portable-shell';
 import { sectionIds, sections, sectionHints, links } from './data/profile';
@@ -29,6 +30,7 @@ import {
 } from '@/components/ui/dialog';
 export default function Home() {
   const [introActive, setIntroActive] = useState(true);
+  const [entryReady, setEntryReady] = useState(false);
   const finishIntro = useCallback(() => setIntroActive(false), []);
   const [selected, setSelected] = useState(0);
   const [cartridge, setCartridge] = useState<ProjectId | null>(null);
@@ -48,6 +50,30 @@ export default function Home() {
   const [swapPhase, setSwapPhase] = useState<'idle' | 'out' | 'in'>('idle');
   const swapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const swapping = useRef(false);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      const id = new URLSearchParams(window.location.search).get('project');
+      const project = projects.find((item) => item.id === id);
+      setEntryReady(true);
+      if (!project) return;
+      setCartridge(project.id);
+      setIntroActive(false);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
+  useEffect(() => {
+    if (introActive || !cartridge) return;
+    const frame = requestAnimationFrame(() => {
+      if (
+        new URLSearchParams(window.location.search).get('project') !== cartridge
+      )
+        return;
+      const consoleElement = document.getElementById('console');
+      consoleElement?.focus({ preventScroll: true });
+      consoleElement?.scrollIntoView({ block: 'center', behavior: 'instant' });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [introActive, cartridge]);
   useEffect(() => {
     // Restore the browser preference after hydration without changing server markup.
     const frame = requestAnimationFrame(() => {
@@ -238,7 +264,7 @@ export default function Home() {
   });
   return (
     <>
-      {introActive && <ArrivalIntro onDone={finishIntro} />}
+      {entryReady && introActive && <ArrivalIntro onDone={finishIntro} />}
       <div className={`site console-style-${consoleStyle}`} inert={introActive}>
         <a className="skip" href="#console">
           Ir a la consola
@@ -360,6 +386,7 @@ export default function Home() {
             <div
               className={`console console-${consoleStyle} swap-${swapPhase}`}
               id="console"
+              tabIndex={-1}
               aria-busy={swapPhase !== 'idle'}
             >
               {(cartridge || musicInserted) && (
