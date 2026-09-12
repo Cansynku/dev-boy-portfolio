@@ -1,6 +1,8 @@
 'use client';
 import type { ReactNode } from 'react';
 import GitHubStarCartridge from './components/github-star-cartridge';
+import ShareProject from './components/share-project';
+import RescueCase from './components/rescue-case';
 
 import { projects, type ProjectId } from './data/projects';
 export type { ProjectId } from './data/projects';
@@ -13,6 +15,8 @@ export function ProjectContent({ id }: { id: ProjectId }) {
       <h2>{project.title}</h2>
       <p>{project.description}</p>
       <p className="project-stack">{project.stack}</p>
+      <ShareProject key={id} id={id} title={project.title} />
+      {id === 'rescue' && <RescueCase />}
       <h3>El reto</h3>
       <p>{project.challenge}</p>
       <h3>Cómo lo abordo</h3>
