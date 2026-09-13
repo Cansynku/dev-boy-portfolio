@@ -22,6 +22,8 @@ Soy desarrollador backend Java y Spring Boot. **Este repositorio es una aplicaci
 - Progreso de lectura y secciones visitadas durante la sesión.
 - Dos consolas intercambiables con una pantalla compartida y preferencia guardada.
 - Cartuchos de proyectos: Backend Rescue, Backend Health Check (método de revisión en fase de piloto) y Dev Boy, con enlaces a código y evidencias.
+- Compartir cada proyecto mediante un enlace que abre su cartucho directamente, sin intro.
+- Caso antes/después de los reintentos de pago en Backend Rescue, con explicación y enlace al test.
 - Cartucho musical, inserción animada y reproducción iniciada por el visitante.
 - Cartucho Verde Estrella con enlace al repositorio para apoyarlo en GitHub.
 - Intro de encuentro de 10 segundos, con opción de saltarla y salida ante errores de imagen.

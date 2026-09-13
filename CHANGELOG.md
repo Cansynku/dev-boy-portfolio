@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.0 — 2026-09-12
+
+- Enlaces directos a cada cartucho de proyecto, con copia del enlace y alternativa manual si el navegador no permite copiar.
+- Los enlaces de proyecto válidos abren la consola con el cartucho insertado, sin esperar la intro.
+- Caso «Dos peticiones. Un solo pago» en Backend Rescue: antes/después, decisión técnica y acceso al código de la prueba.
+
 ## 1.5.0 — 2026-09-11
 
 - Cartucho violeta Backend Health Check: método de revisión, informe de ejemplo y piloto estático de Alf.io, con límites explícitos.
