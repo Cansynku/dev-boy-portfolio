@@ -15,6 +15,8 @@ Si Windows bloquea `tsgolint.exe` mediante Control de aplicaciones, no desactiva
 
 ## Interacción
 
+- «Ver mi trabajo backend» lleva a los dos casos destacados. Sus enlaces abren el cartucho correspondiente sin intro y las evidencias de cada proyecto. Comprobar foco de teclado, una columna en móvil y ausencia de desbordamiento horizontal; los límites educativos y de piloto deben seguir visibles.
+
 - Abrir `?project=rescue#console`, `?project=health#console` y `?project=devboy#console`: cartucho correcto, sin intro y consola enfocada. Un identificador desconocido conserva la entrada normal.
 - Copiar el enlace desde consola y lectura; comprobar que corresponde al proyecto y no arrastra otros parámetros. Si el portapapeles está bloqueado, comprobar el campo de copia manual.
 - En Backend Rescue, desplegar decisión y prueba con ratón y teclado; el enlace lleva a `PaymentReliabilityTest.java`. El caso explica el laboratorio, no ejecuta pagos.

@@ -2,6 +2,7 @@
 import Content from './components/cv-content';
 import { projects } from './data/projects';
 import DiscoveryTrail from './components/discovery-trail';
+import BackendHighlights from './components/backend-highlights';
 import PortableShell from './components/portable-shell';
 import { sectionIds, sections, sectionHints, links } from './data/profile';
 import ProjectCartridges, {
@@ -125,15 +126,6 @@ export default function Home() {
     setSection(index);
     setVisited((v) => (v.includes(index) ? v : [...v, index]));
     beep();
-  }
-  function explore(index: number) {
-    openSection(index);
-    document.getElementById('console')?.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        ? 'instant'
-        : 'smooth',
-      block: 'center',
-    });
   }
   function sideways(delta: number) {
     if (cartridge) return;
@@ -320,9 +312,9 @@ export default function Home() {
               <span>JAVA 21</span>
             </div>
             <div className="intro-actions">
-              <button className="primary-action" onClick={() => explore(1)}>
-                Explorar mi experiencia <ArrowUpRight size={17} />
-              </button>
+              <a className="primary-action" href="#backend-work">
+                Ver mi trabajo backend <ArrowUpRight size={17} />
+              </a>
               <a className="contact-action" href={links.email}>
                 Hablemos <Mail size={16} />
               </a>
@@ -783,6 +775,7 @@ export default function Home() {
             <span>EXPLORA MI RECORRIDO</span>
           </aside>
         </main>
+        <BackendHighlights />
         <DiscoveryTrail
           suspended={introActive || reading || quickView || secret}
         />
