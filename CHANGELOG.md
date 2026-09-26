@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.0 — 2026-09-26
+
+- Sección «Mi backend, con evidencias» con acceso directo a Backend Rescue y Backend Health Check, sus evidencias y límites.
+- Botón principal orientado al trabajo backend, tarjetas adaptadas a móvil y navegación mediante teclado con foco en el destino.
+
 ## 1.6.0 — 2026-09-12
 
 - Enlaces directos a cada cartucho de proyecto, con copia del enlace y alternativa manual si el navegador no permite copiar.
