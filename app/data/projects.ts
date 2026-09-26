@@ -56,3 +56,30 @@ export const projects = [
   },
 ] as const;
 export type ProjectId = (typeof projects)[number]['id'];
+
+export const projectHighlights = [
+  {
+    id: 'rescue',
+    label: '01 / FIABILIDAD · BACKEND RESCUE',
+    title: 'Dos peticiones. Un solo pago.',
+    description:
+      'Un reintento no debería duplicar una operación. Así explica el laboratorio la idempotencia, sus límites y las pruebas que la comprueban.',
+    limit:
+      'Laboratorio educativo. Proveedor de pagos simulado y datos sintéticos.',
+  },
+  {
+    id: 'health',
+    label: '02 / DIAGNÓSTICO · HEALTH CHECK',
+    title: 'Primero la evidencia. Después, el cambio.',
+    description:
+      'Revisar un flujo backend, separar hallazgos de hipótesis y definir una corrección que se pueda verificar. Un método con checklist e informe de ejemplo.',
+    limit:
+      'Método en fase de piloto. No es un escáner automático ni un servicio validado.',
+  },
+] satisfies {
+  id: ProjectId;
+  label: string;
+  title: string;
+  description: string;
+  limit: string;
+}[];

@@ -1,4 +1,107 @@
 /* Project cartridges: molded shells, illustrated labels and a reading-first case. */
+.backend-highlights {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 5% 64px;
+  scroll-margin-top: 24px;
+}
+.backend-highlights-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.backend-highlights-heading h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 12px 0 0;
+}
+.backend-highlights-heading p {
+  max-width: 360px;
+  color: #a9b2a4;
+  line-height: 1.65;
+  margin: 0;
+}
+.backend-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.backend-highlight {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid #444e3c;
+  border-radius: 14px;
+  background: #1a201a;
+}
+.backend-highlight-label {
+  color: #c6ed8b;
+  font: 11px var(--font-mono);
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+.backend-highlight h3 {
+  margin: 16px 0 12px;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+.backend-highlight p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+  color: #c4cbbf;
+}
+.backend-highlight-stack {
+  margin-top: auto;
+  color: #b6c7a8;
+  font: 12px/1.6 var(--font-mono);
+}
+.backend-highlight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin: 20px 0 16px;
+}
+.backend-highlight-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  font-size: 13px;
+}
+.backend-highlight-actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.backend-highlight-case {
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #c6ed8b;
+  color: #192113;
+  font-weight: 700;
+}
+.backend-highlight small {
+  color: #a9b2a4;
+  font-size: 12px;
+  line-height: 1.6;
+}
+@media (max-width: 740px) {
+  .backend-highlights {
+    padding-top: 28px;
+  }
+  .backend-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .backend-highlight {
+    padding: 22px;
+  }
+}
+
 .rescue-case {
   margin: 20px 0;
   padding: 14px;
